@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bitbull_ToosoStock>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Bitbull_Tooso/>
+            </depends>
+        </Bitbull_ToosoStock>
+    </modules>
+</config>

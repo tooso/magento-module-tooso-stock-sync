@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package Bitbull_Tooso
+ * @author Fabio Gollinucci <fabio.golinucci@bitbull.it>
+ */
+-->
+<config>
+    <modules>
+        <Bitbull_ToosoStock>
+            <version>1.0.0</version>
+        </Bitbull_ToosoStock>
+    </modules>
+    <global>
+        <models>
+            <toosostock>
+                <class>Bitbull_ToosoStock_Model</class>
+            </toosostock>
+        </models>
+        <helpers>
+            <tooso>
+                <class>Bitbull_ToosoStock_Helper</class>
+            </tooso>
+        </helpers>
+        <importexport>
+            <export_file_formats>
+                <tooso_csv translate="label">
+                    <model_token>tooso/export_adapter_csv</model_token>
+                    <label>CSV</label>
+                </tooso_csv>
+            </export_file_formats>
+        </importexport>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Bitbull_ToosoStock before="Mage_Adminhtml">Bitbull_ToosoStock_Adminhtml</Bitbull_ToosoStock>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <default>
+        <toosostock>
+            <active>0</active>
+            <server>
+                <api_key />
+                <api_base_url>https://toosopublicapi.cloudapp.net</api_base_url>
+                <dry_run>0</dry_run>
+            </server>
+        </toosostock>
+    </default>
+    <crontab>
+        <jobs>
+            <toosostock>
+                <schedule>
+                    <cron_expr>*/15 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>toosostock/observer::syncronizeStock</model>
+                </run>
+            </toosostock>
+        </jobs>
+    </crontab>
+</config>

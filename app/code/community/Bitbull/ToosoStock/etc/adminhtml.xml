@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package Bitbull_ToosoStock
+ * @author Fabio Gollinucci <fabio.gollinucci@bitbull.it>
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <toosostock translate="title" module="toosostock">
+                                        <title>Tooso Stock</title>
+                                    </toosostock>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

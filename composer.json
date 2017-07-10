@@ -1,0 +1,12 @@
+{
+    "name": "bitbull/magento-module-tooso-stock",
+    "license": "MIT",
+    "type": "magento-module",
+    "description": "Tooso Stock Synchronization for Magento",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors": [
+        { "name": "Fabio Gollinucci", "email": "fabio.gollinucci@bitbull.it" }
+    ]
+}
