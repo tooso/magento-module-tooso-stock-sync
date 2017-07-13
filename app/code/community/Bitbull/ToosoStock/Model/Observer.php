@@ -26,10 +26,10 @@ class Bitbull_ToosoStock_Model_Observer
      */
     public function synchronizeStock(Mage_Cron_Model_Schedule $schedule)
     {
-        if (Mage::helper('toosostock')->isEnabled()) {
+        if (Mage::helper('toosoStock')->isEnabled()) {
             $this->_logger->log('Start scheduled stock synchronization', Zend_Log::DEBUG);
 
-            Mage::getModel('toosostock/stock')->synchronize();
+            Mage::getModel('toosoStock/stock')->synchronize();
 
             $this->_logger->log('End scheduled stock synchronization', Zend_Log::DEBUG);
         }

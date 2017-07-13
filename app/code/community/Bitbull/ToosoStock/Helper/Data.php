@@ -4,12 +4,11 @@
  * @package  Bitbull_ToosoStock
  * @author   Fabio Gollinucci <fabio.gollinucci@bitbull.it>
  */
-class Bitbull_ToosoStock_Helper_Stock extends Mage_Core_Helper_Abstract
+class Bitbull_ToosoStock_Helper_Data extends Mage_Core_Helper_Abstract
 {
-    const XML_PATH_STOCK_SYNC_ACTIVE = 'toosostock/synchronization/active';
-    const XML_PATH_STOCK_SYNC_STORES = 'toosostock/synchronization/stores_to_synchronize';
-    const XML_PATH_STOCK_SYNC_DRY_RUN = 'toosostock/synchronization/dry_run_mode';
-    const DRY_RUN_FILENAME = 'tooso_stock_%store%.csv';
+    const XML_PATH_STOCK_SYNC_ACTIVE = 'toosoStock/synchronization/active';
+    const XML_PATH_STOCK_SYNC_STORES = 'toosoStock/synchronization/stores_to_synchronize';
+    const XML_PATH_STOCK_SYNC_DRY_RUN = 'toosoStock/synchronization/dry_run_mode';
 
     /**
      * Is Enabled
@@ -51,8 +50,6 @@ class Bitbull_ToosoStock_Helper_Stock extends Mage_Core_Helper_Abstract
                 $stores[$store->getCode()] = $store->getId();
             }
         }
-
-        $this->_logger->debug("Stock Synchronization: using stores ".json_encode($stores));
 
         return $stores;
     }

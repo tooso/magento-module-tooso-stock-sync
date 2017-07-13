@@ -13,14 +13,14 @@
     </modules>
     <global>
         <models>
-            <toosostock>
+            <toosoStock>
                 <class>Bitbull_ToosoStock_Model</class>
-            </toosostock>
+            </toosoStock>
         </models>
         <helpers>
-            <tooso>
+            <toosoStock>
                 <class>Bitbull_ToosoStock_Helper</class>
-            </tooso>
+            </toosoStock>
         </helpers>
         <importexport>
             <export_file_formats>
@@ -43,25 +43,25 @@
         </routers>
     </admin>
     <default>
-        <toosostock>
+        <toosoStock>
             <active>0</active>
             <server>
                 <api_key />
                 <api_base_url>https://toosopublicapi.cloudapp.net</api_base_url>
                 <dry_run>0</dry_run>
             </server>
-        </toosostock>
+        </toosoStock>
     </default>
     <crontab>
         <jobs>
-            <toosostock>
+            <tooso_stock>
                 <schedule>
                     <cron_expr>*/15 * * * *</cron_expr>
                 </schedule>
                 <run>
-                    <model>toosostock/observer::syncronizeStock</model>
+                    <model>toosoStock/observer::synchronizeStock</model>
                 </run>
-            </toosostock>
+            </tooso_stock>
         </jobs>
     </crontab>
 </config>

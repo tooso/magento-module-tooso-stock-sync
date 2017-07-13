@@ -14,9 +14,9 @@
                         <children>
                             <config>
                                 <children>
-                                    <toosostock translate="title" module="toosostock">
+                                    <toosoStock translate="title" module="toosoStock">
                                         <title>Tooso Stock</title>
-                                    </toosostock>
+                                    </toosoStock>
                                 </children>
                             </config>
                         </children>
