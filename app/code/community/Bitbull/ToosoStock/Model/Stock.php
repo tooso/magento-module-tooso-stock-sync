@@ -87,7 +87,7 @@ class Bitbull_ToosoStock_Model_Stock
         // load store products visible individually and select system attributes
         $productCollection = Mage::getModel('catalog/product')
             ->getCollection()
-            ->addAttributeToFilter('visibility', array('neq' => Mage_Catalog_Model_Product_Visibility::VISIBILITY_NOT_VISIBLE))
+            ->addAttributeToFilter('status', array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
             ->setStoreId($storeId)
             ->addStoreFilter($storeId)
         ;
