@@ -45,11 +45,6 @@
     <default>
         <toosoStock>
             <active>0</active>
-            <server>
-                <api_key />
-                <api_base_url>https://toosopublicapi.cloudapp.net</api_base_url>
-                <dry_run>0</dry_run>
-            </server>
         </toosoStock>
     </default>
     <crontab>
