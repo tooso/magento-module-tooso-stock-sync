@@ -12,13 +12,23 @@ class Bitbull_ToosoStock_Model_Stock
      * @var Bitbull_Tooso_Helper_Log
      */
     protected $_logger = null;
+
+    /**
+     * @var Bitbull_Tooso_Client
+     */
     protected $_client = null;
+
+    /**
+     * @var Bitbull_Tooso_Helper_Indexer
+     */
+    protected $_indexerHelper = null;
 
     public function __construct()
     {
         $this->_logger = Mage::helper('tooso/log');
         $this->_client = Mage::helper('tooso')->getClient();
         $this->_helper = Mage::helper('toosoStock');
+        $this->_indexerHelper = Mage::helper('tooso/indexer');
     }
 
     /**
@@ -42,7 +52,7 @@ class Bitbull_ToosoStock_Model_Stock
                     $this->_writeDebugFile($this->_getCsvContent($storeId), $storeCode);
                 }else{
                     $client = Mage::helper('tooso')->getClient($storeCode, $storeLangCode);
-                    $client->index($this->_getCsvContent($storeId));
+                    $client->index($this->_getCsvContent($storeId), $this->_indexerHelper->getIndexerParams());
                 }
 
                 $time_end = microtime(true);
